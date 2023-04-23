@@ -17,8 +17,8 @@ const Hero = () => {
       </nav>
 
       <h1 className="head_text">
-        Summarise Articles with <br className="max-md:hidden" />
-        <span className="blue_gradient">OpenAI GPT-4</span>
+      Get the Summary <br className="max-md:hidden" />
+        <span className="blue_gradient">Skip the Read</span>
       </h1>
       <h2 className="desc">Empower Your Knowledge Journey with <span className="font-bold text-blue-700">Breef</span>, an open-sourced AI Article Summariser at Your Fingertips</h2>
     </header>

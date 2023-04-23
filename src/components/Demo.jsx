@@ -41,6 +41,13 @@ const Demo = () => {
     navigator.clipboard.writeText(copyUrl);
     setTimeout(() => setCopied(false), 3000);
   }
+
+  const removeItem = (url) => {
+    const storedItems = JSON.parse(localStorage.getItem("storedItems"));
+    const updatedItems = storedItems.filter((item) => item.url !== url);
+    localStorage.setItem("storedItems", JSON.stringify(updatedItems));
+    setArticle(null);
+  };
   return (
 
     <section className="mt-16 w-full max-w-xl">
@@ -78,13 +85,12 @@ const Demo = () => {
               onClick={() => setArticle(item)}
               className="link_card"
             >
-              <div className="copy_btn" onClick={() => handleCopy(item.url)}>
+            <div className="copy_btn" onClick={() => handleCopy(item.url)}>
                 <img 
                   src={copied === item.url ? tick : copy}
                   alt="copy_icon"
                   className="w-[40%] h-[40%] object-contain"
                 />
-                
               </div>
                <p className="flex-1 font-satoshi text-blue-700 font-medium text-sm truncate">
                 {item.url}
